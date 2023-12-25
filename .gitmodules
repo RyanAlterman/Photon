@@ -1,0 +1,13 @@
+[submodule "ExternalDeps/glfw"]
+	path = ExternalDeps/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "ExternalDeps/imgui"]
+	path = ExternalDeps/imgui
+	url = https://github.com/ocornut/imgui.git
+	branch = docking
+[submodule "ExternalDeps/stb"]
+	path = ExternalDeps/stb
+	url = https://github.com/nothings/stb.git
+[submodule "ExternalDeps/glm"]
+	path = ExternalDeps/glm
+	url = https://github.com/g-truc/glm.git
