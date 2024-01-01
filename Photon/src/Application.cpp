@@ -12,6 +12,11 @@ namespace Photon
 {
 	Application* Application::s_Instance = nullptr;
 
+	static void glfwErrorCallback(int error, const char* description)
+	{
+		fprintf(stderr, "GLFW Error (%d): %s\n", error, description);
+	}
+
 	Application::Application(const ApplicationSpecification& spec)
 	{
 		s_Instance = this;

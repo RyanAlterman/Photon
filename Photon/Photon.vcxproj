@@ -163,6 +163,7 @@
     <ClCompile Include="src\Editor\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Editor\Input\Input.cpp" />
     <ClCompile Include="src\Editor\Profiling\Timer.cpp" />
+    <ClCompile Include="src\Editor\Vulkan\VulkanUtils.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Rendering\Image.cpp" />
   </ItemGroup>
