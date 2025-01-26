@@ -7,9 +7,11 @@ set(srcFiles
 )
 
 set(includeDirs
+    "../Photon/src"
 )
 
 set(externalLibs
+    "Photon"
 )
 
 add_executable(${PROJECT_NAME} ${srcFiles})
