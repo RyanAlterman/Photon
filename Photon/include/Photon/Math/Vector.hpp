@@ -1,0 +1,26 @@
+#pragma once
+
+namespace Photon
+{
+    class Vector
+    {
+    public:
+        Vector(float x = 0.0f, float y = 0.0f, float z = 0.0f);
+        ~Vector();
+
+        inline float GetX() const { return m_data[0]; };
+        inline void SetX(float val) { m_data[0] = val; };
+
+        inline float GetY() const { return m_data[1]; };
+        inline void SetY(float val) { m_data[1] = val; };
+
+        inline float GetZ() { return m_data[2]; };
+        inline void SetZ(float val) { m_data[2] = val; }
+
+        inline float GetW() const { return m_data[3]; };
+
+    protected:
+    private:
+        float m_data[4];
+    };
+}
