@@ -2,6 +2,7 @@
 project(Photon CXX)
 
 set(srcFiles
+    "src/Math/MathUtils.cpp"
     "src/Math/Point.cpp"
     "src/Math/Vector.cpp"
     "src/Color/Color.cpp"
@@ -32,6 +33,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 set(testFiles
+    "test/Math/MathUtilsTests.cpp"
     "test/Math/PointTests.cpp"
     "test/Math/VectorTests.cpp"
 )

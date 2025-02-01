@@ -16,6 +16,7 @@
         "slevesque.shader",
         "Gruntfuggly.todo-tree",
         "vscodevim.vim",
-        "lihui.vs-color-picker"
+        "lihui.vs-color-picker",
+        "matepek.vscode-catch2-test-adapter"
     ]
 }

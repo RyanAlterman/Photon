@@ -17,10 +17,8 @@ namespace Photon
         inline float GetZ() { return m_data[2]; };
         inline void SetZ(float val) { m_data[2] = val; }
 
-        inline float GetW() const { return m_data[3]; };
-
     protected:
     private:
-        float m_data[4];
+        float m_data[3];
     };
 }
