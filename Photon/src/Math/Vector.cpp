@@ -94,6 +94,11 @@ namespace Photon
         return (m_data[0] * m_data[0]) + (m_data[1] * m_data[1]) + (m_data[2] * m_data[2]);
     }
 
+    std::ostream &operator<<(std::ostream &out, const Vector &rhs)
+    {
+        return out << "(" << rhs.GetX() << ", " << rhs.GetY() << ", " << rhs.GetZ() << ")";
+    }
+
     Vector operator+(Vector lhs, const Vector &rhs)
     {
         return lhs += rhs;

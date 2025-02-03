@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 namespace Photon
 {
     /// @brief Represents a 3D vector in cartesian space
@@ -15,7 +17,7 @@ namespace Photon
         /// @param z The z component of the vector. Defaults to 0
         Vector(float x = 0.0f, float y = 0.0f, float z = 0.0f);
 
-        /// @brief Creates a new Vector object by copying the data from
+        /// @brief Creates a new Vector object by copying the data from the
         ///         original vector
         /// @param obj The original vector that will be copied
         Vector(const Vector &obj);
@@ -87,7 +89,7 @@ namespace Photon
 
         /// @brief Retreives the Z component of the vector
         /// @return The Z component
-        inline float GetZ() { return m_data[2]; };
+        inline float GetZ() const { return m_data[2]; };
 
         /// @brief Sets the Z component of the vector to the specified
         ///         value
@@ -102,6 +104,8 @@ namespace Photon
     // ========================================================================
     //                            Vector Operators
     // ========================================================================
+    std::ostream &operator<<(std::ostream &out, const Vector &rhs);
+
     Vector operator+(Vector lhs, const Vector &rhs);
 
     Vector operator-(Vector lhs, const Vector &rhs);
