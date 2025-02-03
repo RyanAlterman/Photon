@@ -2,13 +2,22 @@
 
 namespace Photon
 {
-    Color::Color()
+    Color::Color(float r, float g, float b)
     {
-        // TODO: Implement
+        m_data[0] = Clamp(r);
+        m_data[1] = Clamp(g);
+        m_data[2] = Clamp(b);
+    }
+
+    Color::Color(const Color &obj)
+    {
+        m_data[0] = Clamp(obj.m_data[0]);
+        m_data[1] = Clamp(obj.m_data[1]);
+        m_data[2] = Clamp(obj.m_data[2]);
     }
 
     Color::~Color()
     {
-        // TODO: Implement
+        // NOTE: Currently does nothing
     }
 }

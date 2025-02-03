@@ -36,6 +36,7 @@ set(testFiles
     "test/Math/MathUtilsTests.cpp"
     "test/Math/PointTests.cpp"
     "test/Math/VectorTests.cpp"
+    "test/Color/ColorTests.cpp"
 )
 
 set(testIncludeDirs
