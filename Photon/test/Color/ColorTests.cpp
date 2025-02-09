@@ -16,7 +16,7 @@ TEST(ColorTests, Constructor)
 
     EXPECT_FLOAT_EQ(color.GetR(), 0.5f);
     EXPECT_FLOAT_EQ(color.GetG(), 0.25f);
-    EXPECT_FLOAT_EQ(color.GetB(), 1.0f);
+    EXPECT_FLOAT_EQ(color.GetB(), 1.25f);
 }
 
 TEST(ColorTests, CopyConstructor)

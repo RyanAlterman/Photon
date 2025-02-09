@@ -4,16 +4,16 @@ namespace Photon
 {
     Color::Color(float r, float g, float b)
     {
-        m_data[0] = Clamp(r);
-        m_data[1] = Clamp(g);
-        m_data[2] = Clamp(b);
+        m_data[0] = r;
+        m_data[1] = g;
+        m_data[2] = b;
     }
 
     Color::Color(const Color &obj)
     {
-        m_data[0] = Clamp(obj.m_data[0]);
-        m_data[1] = Clamp(obj.m_data[1]);
-        m_data[2] = Clamp(obj.m_data[2]);
+        m_data[0] = obj.m_data[0];
+        m_data[1] = obj.m_data[1];
+        m_data[2] = obj.m_data[2];
     }
 
     Color::~Color()
