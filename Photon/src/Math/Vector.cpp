@@ -94,6 +94,16 @@ namespace Photon
         return (m_data[0] * m_data[0]) + (m_data[1] * m_data[1]) + (m_data[2] * m_data[2]);
     }
 
+    Vector &Vector::Normalize()
+    {
+        float mag = Magnitude();
+
+        m_data[0] /= mag;
+        m_data[1] /= mag;
+        m_data[2] /= mag;
+        return *this;
+    }
+
     std::ostream &operator<<(std::ostream &out, const Vector &rhs)
     {
         return out << "(" << rhs.GetX() << ", " << rhs.GetY() << ", " << rhs.GetZ() << ")";

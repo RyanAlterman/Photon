@@ -174,3 +174,22 @@ TEST(VectorTests, CrossProduct)
     EXPECT_FLOAT_EQ(v3.GetY(), -4.0f);
     EXPECT_FLOAT_EQ(v3.GetZ(), 3.0f);
 }
+
+TEST(VectorTests, Normalization)
+{
+    Photon::Vector v1(4.0f, 0.0f, 0.0f);
+
+    v1.Normalize();
+    EXPECT_FLOAT_EQ(v1.GetX(), 1.0f);
+    EXPECT_FLOAT_EQ(v1.GetY(), 0.0f);
+    EXPECT_FLOAT_EQ(v1.GetZ(), 0.0f);
+    EXPECT_FLOAT_EQ(v1.Magnitude(), 1.0f);
+
+    Photon::Vector v2(1.0f, 2.0f, 3.0f);
+
+    v2.Normalize();
+    EXPECT_FLOAT_EQ(v2.GetX(), 0.26726124191242438468455348087975);
+    EXPECT_FLOAT_EQ(v2.GetY(), 0.53452248382484876936910696175951);
+    EXPECT_FLOAT_EQ(v2.GetZ(), 0.80178372573727315405366044263926);
+    EXPECT_FLOAT_EQ(v2.Magnitude(), 1.0f);
+}

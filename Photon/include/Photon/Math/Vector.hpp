@@ -48,6 +48,10 @@ namespace Photon
         /// @return The rough magnitude of the vector
         float MagnitudeSquared();
 
+        /// @brief Normalizes the vector
+        /// @return The normalized vector
+        Vector &Normalize();
+
         // ====================================================================
         //                              Operators
         // ====================================================================

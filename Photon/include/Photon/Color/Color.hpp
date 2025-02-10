@@ -29,6 +29,10 @@ namespace Photon
         // ====================================================================
         //                              Operators
         // ====================================================================
+        Color &operator+=(const Color &rhs);
+        Color &operator-=(const Color &rhs);
+        Color &operator*=(const float rhs);
+        Color &operator*=(const Color &rhs);
 
         // ====================================================================
         //                          Getters & Setters
@@ -64,4 +68,12 @@ namespace Photon
     private:
         float m_data[3];
     };
+
+    // ========================================================================
+    //                          Point Operators
+    // ========================================================================
+    Color &operator+(Color lhs, const Color &rhs);
+    Color &operator-(Color lhs, const Color &rhs);
+    Color &operator*(Color lhs, const float rhs);
+    Color &operator*(Color lhs, const Color &rhs);
 }
