@@ -75,5 +75,6 @@ namespace Photon
     Color &operator+(Color lhs, const Color &rhs);
     Color &operator-(Color lhs, const Color &rhs);
     Color &operator*(Color lhs, const float rhs);
+    Color &operator*(const float lhs, Color rhs);
     Color &operator*(Color lhs, const Color &rhs);
 }

@@ -88,6 +88,11 @@ TEST(ColorTests, ScalarColorMult)
     EXPECT_FLOAT_EQ(c2.GetG(), 0.6f);
     EXPECT_FLOAT_EQ(c2.GetB(), 0.8f);
 
+    Photon::Color c3 = scalar * c1;
+    EXPECT_FLOAT_EQ(c3.GetR(), 0.4f);
+    EXPECT_FLOAT_EQ(c3.GetG(), 0.6f);
+    EXPECT_FLOAT_EQ(c3.GetB(), 0.8f);
+
     c1 *= scalar;
     EXPECT_FLOAT_EQ(c1.GetR(), 0.4f);
     EXPECT_FLOAT_EQ(c1.GetG(), 0.6f);

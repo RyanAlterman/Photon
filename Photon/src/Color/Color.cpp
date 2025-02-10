@@ -68,6 +68,11 @@ namespace Photon
         return lhs *= rhs;
     }
 
+    Color &operator*(const float lhs, Color rhs)
+    {
+        return rhs *= lhs;
+    }
+
     Color &operator*(Color lhs, const Color &rhs)
     {
         return lhs *= rhs;
