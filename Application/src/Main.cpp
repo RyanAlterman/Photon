@@ -1,5 +1,7 @@
 #include <iostream>
-#include <fstream>
+
+#include <Photon/Color/Color.hpp>
+#include <Photon/Files/PPMFile.hpp>
 
 int main(int argc, char **argv)
 {
@@ -7,19 +9,16 @@ int main(int argc, char **argv)
     const int imageWidth = 256;
     const int imageHeight = 256;
 
-    std::ofstream file;
-    file.open("image.ppm");
+    Photon::PPMFile file("image.ppm", imageWidth, imageHeight, Photon::PPM_FORMAT::P3);
 
-    if (!file.is_open())
+    if (!file.Open())
     {
         std::cerr << "Failed to open/create the output file" << std::endl;
+        return -1;
     }
 
     // Render
-    file << "P3" << std::endl
-         << imageWidth << ' ' << imageHeight << std::endl
-         << "255" << std::endl;
-
+    std::vector<Photon::Color> imageBuffer;
     for (int j = 0; j < imageHeight; j++)
     {
         std::cout << "\rScanlines Remaining: " << (imageHeight - j) << ' ' << std::flush;
@@ -29,16 +28,14 @@ int main(int argc, char **argv)
             double g = static_cast<double>(j) / (imageHeight - 1);
             double b = 0.0;
 
-            int ir = static_cast<int>(255.999 * r);
-            int ig = static_cast<int>(255.999 * g);
-            int ib = static_cast<int>(255.999 * b);
-
-            file << ir << ' ' << ig << ' ' << ib << std::endl;
+            Photon::Color color(r, g, b);
+            imageBuffer.push_back(color);
         }
     }
 
     std::cout << "\nRender Complete" << std::endl;
-    file.close();
+    file.Save(imageBuffer);
+    file.Close();
 
     return 0;
 }

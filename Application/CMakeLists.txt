@@ -7,7 +7,7 @@ set(srcFiles
 )
 
 set(includeDirs
-    "../Photon/src"
+    "../Photon/include"
 )
 
 set(externalLibs

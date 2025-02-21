@@ -6,6 +6,8 @@ set(srcFiles
     "src/Math/Point.cpp"
     "src/Math/Vector.cpp"
     "src/Color/Color.cpp"
+    "src/Files/File.cpp"
+    "src/Files/PPMFile.cpp"
 )
 
 set(includeDirs
