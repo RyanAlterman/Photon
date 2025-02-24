@@ -8,6 +8,7 @@ set(srcFiles
     "src/Color/Color.cpp"
     "src/Files/File.cpp"
     "src/Files/PPMFile.cpp"
+    "src/Collision/Ray.cpp"
 )
 
 set(includeDirs
