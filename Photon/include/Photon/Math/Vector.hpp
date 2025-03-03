@@ -31,7 +31,7 @@ namespace Photon
         /// @brief Finds the dot product of two vectors
         /// @param obj The second vector of the dot product
         /// @return A float representing the dot product
-        float DotProduct(const Vector &obj);
+        float DotProduct(const Vector &obj) const;
 
         /// @brief Finds the cross product of two vectors
         /// @param obj The second vector of the cross product

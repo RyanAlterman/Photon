@@ -4,9 +4,22 @@
 #include <Photon/Files/PPMFile.hpp>
 #include <Photon/Collision/Ray.hpp>
 
+bool hitSphere(const Photon::Point &center, float radius, const Photon::Ray &ray)
+{
+    Photon::Vector oc = center - ray.Origin();
+    auto a = ray.Direction().DotProduct(ray.Direction());
+    auto b = -2.0f * ray.Direction().DotProduct(oc);
+    auto c = oc.DotProduct(oc) - radius * radius;
+    auto discriminant = b * b - 4 * a * c;
+    return discriminant >= 0;
+}
+
 Photon::Color rayColor(const Photon::Ray &r)
 {
     Photon::Vector dir(r.Direction());
+
+    if (hitSphere(Photon::Point(0.0f, 0.0f, -1.0f), 0.5f, r))
+        return Photon::Color(1.0f, 0.0f, 0.0f);
 
     Photon::Vector unitDirection = dir.Normalize();
     double a = 0.5 * (unitDirection.GetY() + 1.0);
@@ -25,19 +38,19 @@ int main(int argc, char **argv)
     // Camera
     double focalLength = 1.0;
     double viewportHeight = 2.0;
-    double viewportWidth = viewportHeight * ((double)(imageWidth / imageHeight));
-    Photon::Point cameraCenter = Photon::Point();
+    double viewportWidth = viewportHeight * ((double)(imageWidth) / (double)(imageHeight));
+    Photon::Point cameraCenter = Photon::Point(0.0f, 0.0f, 0.0f);
 
     // Calculate the Vectors accross horizontal and vertical viewport edges
-    Photon::Vector viewportU = Photon::Vector(viewportWidth);
-    Photon::Vector viewportV = Photon::Vector(0.0, -viewportHeight);
+    Photon::Vector viewportU = Photon::Vector(viewportWidth, 0.0f, 0.0f);
+    Photon::Vector viewportV = Photon::Vector(0.0, -viewportHeight, 0.0f);
 
     // Calculate horizontal and vertical deltas
     Photon::Vector pixelDeltaU = viewportU / imageWidth;
     Photon::Vector pixelDeltaV = viewportV / imageHeight;
 
     // Calculate location of uppper left pixel
-    Photon::Point viewportUpperLeft = cameraCenter - Photon::Vector(0, 0, focalLength) - viewportU / 2 - viewportV / 2;
+    Photon::Point viewportUpperLeft = cameraCenter - Photon::Vector(0.0f, 0.0f, focalLength) - viewportU / 2 - viewportV / 2;
     Photon::Point pixel00Loc = viewportUpperLeft + 0.5 * (pixelDeltaU + pixelDeltaV);
 
     Photon::PPMFile file("image.ppm", imageWidth, imageHeight, Photon::PPM_FORMAT::P3);

@@ -71,7 +71,7 @@ namespace Photon
         return *this;
     }
 
-    float Vector::DotProduct(const Vector &obj)
+    float Vector::DotProduct(const Vector &obj) const
     {
         return (m_data[0] * obj.m_data[0]) + (m_data[1] * obj.m_data[1]) + (m_data[2] * obj.m_data[2]);
     }
